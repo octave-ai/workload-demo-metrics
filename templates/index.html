@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="--accent: {{ accent }}">
+  <main>
+    <header><span class="badge">Source {{ source }}</span><span>Version {{ version }}</span></header>
+    <p class="eyebrow">DÉMONSTRATION MULTI-SOURCE</p>
+    <h1>{{ title }}</h1>
+    <p>{{ description }}</p>
+    <section class="cards" aria-label="Données de démonstration">
+      {% for row in rows %}
+      <article><span>{{ row.label }}</span><strong>{{ row.value }}</strong><small>{{ row.detail }}</small></article>
+      {% endfor %}
+    </section>
+    <p><a href="{{ url_for('health') }}">Vérifier la santé de cette application ↗</a></p>
+    <footer>Données fictives · Aucun service externe · Dépôt indépendant : {{ source }}</footer>
+  </main>
+</body>
+</html>

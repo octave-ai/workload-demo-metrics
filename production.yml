@@ -1,0 +1,14 @@
+version: 1
+applications:
+  demo-metrics:
+    name: "Demo Metrics"
+    type: gunicorn
+    script: app:app
+    subdomain: demo-metrics
+    git_version:
+      preprod: main
+      prod: v1.0.0
+    requirements: requirements.txt
+    gunicorn_settings:
+      workers: 1
+      timeout: 30
