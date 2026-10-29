@@ -3,7 +3,7 @@ from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 SOURCE = "metrics"
-VERSION = "1.0.0"
+VERSION = "1.0.1"
 
 
 @app.get("/healthz")

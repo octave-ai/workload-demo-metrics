@@ -7,7 +7,7 @@ applications:
     subdomain: demo-metrics
     git_version:
       preprod: main
-      prod: v1.0.0
+      prod: v1.0.1
     requirements: requirements.txt
     gunicorn_settings:
       workers: 1

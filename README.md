@@ -49,9 +49,9 @@ pouvoir récupérer ces paquets via son registre Python.
 3. Déployer en environnement **test** : la référence `preprod` suit `main`.
 4. Ouvrir les deux pages ; constater les contenus, sources et couleurs différents.
 5. Consulter les logs HTTP puis arrêter un seul workload, sans arrêter l'autre.
-6. Facultatif : déployer la version stable `v1.0.0` en environnement production.
+6. Facultatif : déployer la version stable `v1.0.1` en environnement production.
 
-Le tag `v1.0.0` est la référence stable de l'exemple ; `main` reste la référence de
+Le tag `v1.0.1` est la référence stable de l'exemple ; `main` reste la référence de
 préproduction. Pour montrer une mise à jour, modifier une donnée ou la version
 sur `main`, synchroniser cette source puis redéployer son environnement test.
 Ne pas déplacer le tag stable pour simuler une mise à jour.

@@ -17,7 +17,7 @@ class ApplicationTests(unittest.TestCase):
         from app import app
         response = app.test_client().get("/healthz")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.json, {"status": "ok", "source": "metrics", "version": "1.0.0", "synthetic": True})
+        self.assertEqual(response.json, {"status": "ok", "source": "metrics", "version": "1.0.1", "synthetic": True})
 
     def test_assets_and_health_links_follow_the_wsgi_mount(self):
         from app import app
@@ -29,6 +29,11 @@ class ApplicationTests(unittest.TestCase):
         self.assertIn((prefix + "/healthz").encode(), response.data)
         with client.get("/static/style.css") as css:
             self.assertEqual(css.status_code, 200)
+
+    def test_favicon_does_not_escape_the_application_mount(self):
+        from app import app
+        response = app.test_client().get("/")
+        self.assertIn(b'<link rel="icon" href="data:image/svg+xml;base64,', response.data)
 
     def test_no_write_endpoint_is_exposed(self):
         from app import app
